@@ -23,18 +23,28 @@
         android:id="@+id/btnEnableDisable_Discoverable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< Updated upstream:Phone App/Necessary App Files/layout/activity_main.xml
         android:layout_marginTop="76dp"
         android:onClick="btnEnableDisable_Discoverable"
         android:text="Enable/Disable Discover"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         />
+=======
+        android:layout_alignParentTop="true"
+
+        android:layout_toStartOf="@+id/btnONOFF"
+        android:layout_toEndOf="@+id/btnFindUnpairedDevices"
+        android:onClick="btnEnableDisable_Discoverable"
+        android:text="Enable Discovery" />
+>>>>>>> Stashed changes:Necessary App Files/layout/activity_main.xml
 
     <Button
         android:id="@+id/btnFindUnpairedDevices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="btnDiscover"
+<<<<<<< Updated upstream:Phone App/Necessary App Files/layout/activity_main.xml
         android:text="Discover"/>
 
     <ListView
@@ -43,6 +53,43 @@
         android:layout_marginTop="150dp"
         android:layout_marginBottom="150dp"
         android:id="@+id/lvNewDevices"
+=======
+        android:text="Discover"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"/>
+
+    <ListView
+        android:id="@+id/lvNewDevices"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="150dp"
+        android:layout_below="@id/btnStartConnection"/>
+
+    <Button
+        android:id="@+id/btnStartConnection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnEnableDisable_Discoverable"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:text="Start Connection" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lvNewDevices"
+        android:layout_alignParentStart="true"
+        android:hint="Enter Text Here" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SEND"
+        android:id="@+id/btnSend"
+        android:layout_toRightOf="@id/editText"
+        android:layout_below="@id/lvNewDevices"
+>>>>>>> Stashed changes:Necessary App Files/layout/activity_main.xml
         />
 
 </RelativeLayout>
