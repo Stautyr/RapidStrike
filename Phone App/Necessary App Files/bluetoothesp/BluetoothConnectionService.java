@@ -10,6 +10,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -164,8 +166,11 @@ public class BluetoothConnectionService {
                 OutputStream tmpOut = null;
 
                 //dismiss the progressdialog when connection is established
-                mProgressDialog.dismiss();
-
+                try {
+                    mProgressDialog.dismiss();
+                }catch (NullPointerException e){
+                    e.printStackTrace();
+                }
                 try {
                     tmpIn = mmSocket.getInputStream();
                     tmpOut = mmSocket.getOutputStream();
@@ -186,6 +191,10 @@ public class BluetoothConnectionService {
                         bytes = mmInStream.read(buffer);
                         String incomingMessage = new String(buffer, 0, bytes);
                         Log.d(TAG, "InputStream: " + incomingMessage);
+
+                        Intent incomingMessageIntent = new Intent("incomingMessage");
+                        incomingMessageIntent.putExtra("theMessage", incomingMessage);
+                        LocalBroadcastManager.getInstance(mContext).sendBroadcast(incomingMessageIntent);
                     } catch (IOException e) {
                         Log.d(TAG, "write: Error reading inputstream. " + e.getMessage());
                         break;

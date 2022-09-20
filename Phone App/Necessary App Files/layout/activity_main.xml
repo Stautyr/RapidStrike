@@ -23,37 +23,18 @@
         android:id="@+id/btnEnableDisable_Discoverable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< Updated upstream:Phone App/Necessary App Files/layout/activity_main.xml
-        android:layout_marginTop="76dp"
-        android:onClick="btnEnableDisable_Discoverable"
-        android:text="Enable/Disable Discover"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        />
-=======
         android:layout_alignParentTop="true"
 
         android:layout_toStartOf="@+id/btnONOFF"
         android:layout_toEndOf="@+id/btnFindUnpairedDevices"
         android:onClick="btnEnableDisable_Discoverable"
         android:text="Enable Discovery" />
->>>>>>> Stashed changes:Necessary App Files/layout/activity_main.xml
 
     <Button
         android:id="@+id/btnFindUnpairedDevices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="btnDiscover"
-<<<<<<< Updated upstream:Phone App/Necessary App Files/layout/activity_main.xml
-        android:text="Discover"/>
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="4000dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginBottom="150dp"
-        android:id="@+id/lvNewDevices"
-=======
         android:text="Discover"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"/>
@@ -89,7 +70,15 @@
         android:id="@+id/btnSend"
         android:layout_toRightOf="@id/editText"
         android:layout_below="@id/lvNewDevices"
->>>>>>> Stashed changes:Necessary App Files/layout/activity_main.xml
         />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:text="Incoming messages"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/editText"
+        android:layout_alignParentStart="true"
+        android:id="@+id/incomingMessage"
+        android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>
