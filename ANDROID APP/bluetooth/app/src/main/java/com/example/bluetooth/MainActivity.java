@@ -7,6 +7,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import android.Manifest;
 //import android.app.ProgressDialog;
+import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
     EditText etSend;
-    private static final UUID MY_UUID_INSECURE = UUID.fromString("8ce255c0-200a-11e0-ac64-0800200c9a66");
+    //private static final UUID MY_UUID_INSECURE = UUID.fromString("8ce255c0-200a-11e0-ac64-0800200c9a66");
     BluetoothDevice mBTDevice;
 
     public ArrayList<BluetoothDevice> mBTDevices = new ArrayList<>();
@@ -237,8 +238,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     //Starting chat service
-    public void startBTConnection(BluetoothDevice device, UUID uuid){
+    public void startBTConnection(BluetoothDevice device){
         Log.d(TAG, "startBTConnection: Initializing RFCOM Bluetooth Connection");
+        @SuppressLint("MissingPermission")
+        UUID uuid = device.getUuids()[0].getUuid();
         mBluetoothConnection.startClient(device, uuid);
     }
 
