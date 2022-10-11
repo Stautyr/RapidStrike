@@ -14,16 +14,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button teamsel = findViewById(R.id.Team_Select);
-        teamsel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Code here executes on main thread after user presses button
-                Intent intent = new Intent(MainActivity.this, ViewTeam.class);
-                startActivity(intent);
-            }
-        });
-
         final Button comm = findViewById(R.id.Comm);
         comm.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
