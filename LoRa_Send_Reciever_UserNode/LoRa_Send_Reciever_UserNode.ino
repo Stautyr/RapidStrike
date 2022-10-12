@@ -1,9 +1,13 @@
 #include "heltec.h"
 #include "images.h"
+#include "BluetoothSerial.h"
+
+BluetoothSerial SerialBT;
 
 #define BAND    915E6  //you can set band here directly,e.g. 868E6,915E6
 
 //Initialize Variables
+
 // Sender Variables
 char rx_byte = 0;
 String rx_str = "";
@@ -14,16 +18,21 @@ int MAXBYTES = 60;
 unsigned int counter = 0;
 int temp1;
 String currentbyte;
+String curTeam = "Red";
+String sendToTeam;
+char *TEAMS[] = {"Red", "Blue", "Green", "Yellow", "Yeet"};
 
 // Receiver Variables
 String rssi = "RSSI --";
 String packSize = "--";
 String packet = "";
 bool multipack = false;
+bool gotsendToTeam = false;
 String temp;
 
 void setup() {
   Heltec.begin(true /*DisplayEnable Enable*/, true /*Heltec.LoRa Disable*/, true /*Serial Enable*/, true /*PABOOST Enable*/, BAND /*long BAND*/);
+  SerialBT.begin("LoRa32test");
   LoRa.receive();
 }
 
@@ -39,8 +48,8 @@ void loop() {
   delay(10);
   //-------------------------==================Sender Code====================-------------------------
   //check for a message given
-  if(Serial.available() > 0){
-    rx_byte = Serial.read();
+  if(SerialBT.available() > 0){
+    rx_byte = SerialBT.read();
      
     if (rx_byte != '\n') {
       //a character of the string was received
@@ -154,13 +163,14 @@ String divMSG(String input) {
   }
   
 }
+
 //-------------------------==================Reciever Functions==================-------------------------
 //display data from packet on OLED screen
 void LoRaData(){
   Heltec.display->clear();
   Heltec.display->setTextAlignment(TEXT_ALIGN_LEFT);
   Heltec.display->setFont(ArialMT_Plain_10);
-  Heltec.display->drawString(0 , 15 , "Received "+ packSize + " bytes");
+  Heltec.display->drawString(0 , 15 , "UserNode| My Team "+ curTeam);
   Heltec.display->drawStringMaxWidth(0 , 26 , 128, packet);
   Heltec.display->drawString(0, 0, rssi);  
   Heltec.display->display();
@@ -181,19 +191,26 @@ void cbk(int packetSize) {
     //grab the msg
     for (int i = 0; i < packetSize; i++) { temp += (char) LoRa.read(); }
     rssi = "RSSI " + String(LoRa.packetRssi(), DEC) ;
+    
     //check if the ending flag was sent
     if(temp == "posty"){
-      Serial.println(packet);
-      //send full msg to be displayed
-      LoRaData();
+      //check if this msg is meant for this team
+      sendToTeam = getToTeam(packet);
+      if(sendToTeam == curTeam or sendToTeam == "@all"){
+        packet = stripTeam(packet, sendToTeam);
+        SerialBT.println(packet);
+        //send full msg to be displayed
+        LoRaData();
+      }
       //clean up
       packet = "";
       multipack = false;
+      gotsendToTeam = false;
     }
     //if flag was not recieved, add current packets msg to a string
     else{
       packet += temp;  
-    }
+    }   
   }
   //msg is on one packet
   else{
@@ -201,8 +218,33 @@ void cbk(int packetSize) {
     packSize = String(packetSize,DEC);
     //grab msg from packet
     for (int i = 0; i < packetSize; i++) { packet += (char) LoRa.read(); }
-    rssi = "RSSI " + String(LoRa.packetRssi(), DEC) ;
-    //display the msg
-    LoRaData();
+    
+    //check if this msg is meant for this team
+    sendToTeam = getToTeam(packet);
+    if(sendToTeam == curTeam or sendToTeam == "@all"){
+      packet = stripTeam(packet, sendToTeam);
+      rssi = "RSSI " + String(LoRa.packetRssi(), DEC);
+      //Send msg to BT Device
+      SerialBT.println(packet);
+      //display the msg
+      LoRaData();
+      //sendToTeam = "";
+    }
   }
+}
+
+String getToTeam(String input){
+  for(int i = 0; i < (sizeof(TEAMS)/sizeof(TEAMS[0])); i++){
+    if(input.indexOf(TEAMS[i]) == 0){
+      //return the team
+      return TEAMS[i];
+      break;
+    }
+  }
+}
+
+String stripTeam(String input, String Team){
+  String msg = input;
+  msg.remove(0, Team.length()); 
+  return msg; 
 }
