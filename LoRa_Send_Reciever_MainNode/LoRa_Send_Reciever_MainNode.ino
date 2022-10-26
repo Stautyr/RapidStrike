@@ -186,7 +186,7 @@ void cbk(int packetSize) {
     rssi = "RSSI " + String(LoRa.packetRssi(), DEC) ;
     //display the msg
     LoRaData();
-    packet += " node1";
+    //packet += " node1";
     Serial.print("single packet: ");
     Serial.println(packet);
     Serial.println("Pushing MSG along (single packet)");
