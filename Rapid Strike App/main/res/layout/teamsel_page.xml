@@ -34,6 +34,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Submit" />
+
+            <EditText
+                android:id="@+id/input_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="46dp"
+                android:ems="10"
+                android:hint="Team Name" />
+
+            <Button
+                android:id="@+id/btnadd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="67dp"
+                android:text="Add Team" />
         </LinearLayout>
     </LinearLayout>
 
