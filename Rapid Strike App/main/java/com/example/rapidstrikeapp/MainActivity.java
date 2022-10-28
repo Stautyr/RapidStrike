@@ -23,15 +23,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button carrymod = findViewById(R.id.CarryModule);
-        carrymod.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Code here executes on main thread after user presses button
-                Intent intent = new Intent(MainActivity.this, ViewCarry.class);
-                startActivity(intent);
-            }
-        });
-
         final Button helpbtn = findViewById(R.id.Help);
         helpbtn.setOnClickListener(new View.OnClickListener() {
             @Override
