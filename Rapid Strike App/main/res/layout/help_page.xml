@@ -20,14 +20,37 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="
+                android:text="What is DMN?"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DMN is a means of communication in the event that the main infrastructure for communication (Cell/Radio Towers) is down. This is not a replacement for infrastructure it is meant to be a lifeline for emergency use until the main infrastructure is repaired. During natural disasters or emergencies, cell/radio towers can be either damaged or lose power leaving many people in the dark during the initial response. Repairing this infrastructure can take anywhere from days to weeks, this product would be able vital information to those affect much earlier than established means. The first 72 hours after a disaster are critical, a grab-and-go solution should exist to support first responders as soon as possible." />
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="How do I connect to the app?"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The app utilizes Bluetooth connection."
+                />
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I do not see my team. How do I get it added?"
+                android:textStyle="bold"/>
 
-Adipiscing sapien imperdiet euismod, nulla hendrerit, aliquet urna pede. Hac placerat iaculis laoreet dis mattis rutrum Senectus libero morbi justo quisque eros vulputate ullamcorper iaculis elementum erat parturient. Orci morbi sociis fermentum cras id nibh mattis dictumst. Tincidunt neque mattis dolor urna id nec rutrum, velit laoreet quam habitant urna lacus orci ad nec erat euismod neque posuere, dignissim Sagittis mus duis quisque hymenaeos convallis, at imperdiet ligula lorem diam ultrices vestibulum massa porta amet litora ac phasellus massa lacus fringilla lobortis orci non sed magna penatibus pretium. Ligula parturient tellus litora mus. Metus. Massa dictumst nam facilisi quis dis placerat maecenas urna sit nullam phasellus. Interdum. Mus enim euismod porttitor nostra turpis auctor. Dictum et dui facilisi ut bibendum nonummy, et cursus adipiscing pulvinar Rhoncus non pharetra. Fames. Dui pharetra vivamus per ridiculus pulvinar faucibus potenti condimentum auctor felis pharetra eu aliquet vivamus. Pharetra. Nec. Bibendum luctus.
-
-Hac potenti sociosqu bibendum parturient donec elit blandit, placerat tincidunt malesuada fames maecenas morbi non. Vel ultricies nisi curabitur Fames pharetra sit netus vehicula lacinia tellus pretium consequat ad ligula imperdiet consequat ut euismod semper torquent vestibulum maecenas. Ante morbi iaculis massa, facilisis luctus porttitor erat sociosqu odio erat erat nostra, vivamus, nibh Praesent quam vitae. Donec eros. Scelerisque sociosqu netus at integer malesuada hendrerit odio dis tempus proin tortor, volutpat sem diam Habitasse. Ornare feugiat amet eros nibh consequat vivamus justo convallis parturient quis vitae Lorem luctus dictum accumsan ut aliquam sem massa, neque interdum dapibus. Congue pede habitant porta venenatis. Metus convallis aliquam a. Suscipit eget tristique hac arcu porttitor erat urna ut sem nisl elementum habitant inceptos scelerisque amet arcu hymenaeos. Amet est. Suscipit malesuada ut quisque dapibus enim malesuada iaculis ligula. Per nunc penatibus etiam ad placerat augue platea ac donec facilisi nulla, nascetur. Tellus porttitor sollicitudin turpis ultrices etiam, orci feugiat nunc. Venenatis hac tristique Nisi dui. Condimentum. Bibendum tempus laoreet ac dictum vulputate rhoncus hymenaeos imperdiet ornare etiam duis pede aenean consectetuer orci. Tellus faucibus lectus placerat, mauris accumsan conubia Pharetra scelerisque varius urna malesuada sit scelerisque fames. Nam quisque pede morbi aenean auctor ullamcorper nibh hymenaeos Lectus aenean. Dignissim pellentesque purus fringilla Et Lorem auctor. Nostra parturient Felis pulvinar Imperdiet donec.
-
-Hendrerit mattis hac non dui elit est imperdiet porttitor facilisi felis rhoncus vivamus. Ut. Dolor Nisi morbi nisi elit dolor. Gravida elementum vehicula non nisi inceptos proin duis aptent aptent id arcu viverra nonummy suscipit, class. Posuere proin proin quisque porta consectetuer commodo taciti viverra ac molestie. Tempus. Fermentum tincidunt et accumsan aliquam vestibulum mattis quis proin eleifend. Litora velit blandit nunc, iaculis montes aliquam lectus consectetuer lacus gravida, parturient quisque iaculis vel enim mauris, nec habitasse conubia libero mus curae; taciti sem risus felis arcu nonummy nunc aenean sed. Viverra malesuada nec pretium cras vivamus eu suscipit mollis etiam ullamcorper torquent aliquam nullam sagittis fringilla mus massa. Parturient hendrerit libero quisque. Suspendisse, tristique, ante pellentesque lobortis nonummy hendrerit molestie integer pretium at, purus leo vestibulum. Id felis posuere mattis. Magna Mollis viverra pede.
-" />
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="397dp"
+                android:layout_height="wrap_content"
+                android:text="The app allows for the addition of teams by adding your team to the team selection database. Once your team is added you will be able to see it in the dropdown menu." />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
