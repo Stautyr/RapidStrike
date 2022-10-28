@@ -52,7 +52,7 @@ public class ViewComm extends AppCompatActivity implements AdapterView.OnItemSel
 
     //data for spinner toTeamSelector
     //***needs to be linked to team database***
-    String[] teams = {"Strike Team 1", "Strike Team 2", "Strike Team 3", "Strike Team 4", "Strike Team 5", "Strike Team 6", "Strike Team 7"};
+    String[] teams = {"Red", "Blue", "Green", "Yellow", "@all"};
     String curteam;
 
 
