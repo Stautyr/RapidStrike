@@ -50,7 +50,7 @@ public class ViewComm extends AppCompatActivity implements AdapterView.OnItemSel
     private final static int CONNECTING_STATUS = 1; // used in bluetooth handler to identify message status
     private final static int MESSAGE_READ = 2; // used in bluetooth handler to identify message update
 
-    String[] teams = {"Red", "Blue", "Green", "Yellow", "Yeet"};
+    String[] teams = {"Strike Team 1", "Strike Team 2", "Strike Team 3", "Strike Team 4", "Strike Team 5", "Strike Team 6", "Strike Team 7"};
     String curteam;
 
     @Override
