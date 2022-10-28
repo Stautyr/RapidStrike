@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/ColeE/AndroidStudioProjects/Rapid Strike App/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ColeE/AndroidStudioProjects/Rapid Strike App/main/res/layout/activity_select_device.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ColeE/AndroidStudioProjects/Rapid Strike App/main/res/layout/carrymod_page.xml" value="0.36666666666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
