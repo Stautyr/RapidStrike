@@ -20,13 +20,13 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="What is DMN?"
+                android:text="What is DDMN?"
                 android:textStyle="bold"/>
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="DMN is a means of communication in the event that the main infrastructure for communication (Cell/Radio Towers) is down. This is not a replacement for infrastructure it is meant to be a lifeline for emergency use until the main infrastructure is repaired. During natural disasters or emergencies, cell/radio towers can be either damaged or lose power leaving many people in the dark during the initial response. Repairing this infrastructure can take anywhere from days to weeks, this product would be able vital information to those affect much earlier than established means. The first 72 hours after a disaster are critical, a grab-and-go solution should exist to support first responders as soon as possible." />
+                android:text="DDMN is a means of communication in the event that the main infrastructure for communication (Cell/Radio Towers) is down. This is not a replacement for infrastructure it is meant to be a lifeline for emergency use until the main infrastructure is repaired. During natural disasters or emergencies, cell/radio towers can be either damaged or lose power leaving many people in the dark during the initial response. Repairing this infrastructure can take anywhere from days to weeks, this product would be able vital information to those affect much earlier than established means. The first 72 hours after a disaster are critical, a grab-and-go solution should exist to support first responders as soon as possible." />
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
